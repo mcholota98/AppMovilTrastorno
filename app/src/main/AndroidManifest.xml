@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.appmoviltrastorno">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMovilTrastorno">
+        <activity
+            android:name=".menu"
+            android:exported="false" />
+        <activity
+            android:name=".tutor"
+            android:exported="false" />
+        <activity
+            android:name=".see_detect"
+            android:exported="false" />
+        <activity
+            android:name=".see_emotion"
+            android:exported="false" />
+        <activity
+            android:name=".people_to_monitor"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
