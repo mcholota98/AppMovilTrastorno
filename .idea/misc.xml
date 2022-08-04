@@ -4,16 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/drawable/contenido.xml" value="0.1415" />
+        <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/drawable/ic_ajustes_foreground.xml" value="0.1415" />
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/drawable/icons8_cand.xml" value="0.1415" />
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/drawable/login.xml" value="0.1415" />
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/drawable/vector.xml" value="0.1415" />
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/activity_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/activity_menu.xml" value="0.25" />
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/activity_people_to_monitor.xml" value="0.25" />
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/activity_see_detect.xml" value="0.25" />
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/activity_see_emotion.xml" value="0.25" />
         <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/activity_tutor.xml" value="0.22" />
+        <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/fragment_emotion.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/fragment_people_to_monitor.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/fragment_see_detect.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Miguel/AndroidStudioProjects/AppMovilTrastorno/app/src/main/res/layout/fragment_tutor.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

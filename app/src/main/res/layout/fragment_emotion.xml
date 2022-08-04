@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/seeemotionc"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/seeemotionc">
+
+
+    <ImageView
+        android:id="@+id/some_id"
+        android:layout_width="344dp"
+        android:layout_height="242dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="174dp"
+        app:srcCompat="@drawable/imagenb" />
+
+    <TextView
+        android:id="@+id/emotion_cha"
+        android:layout_width="206dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="38dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/emotion_cha"
+        android:textAppearance="@style/emotion_cha" />
+
+    <View
+        android:id="@+id/buscar"
+        android:layout_width="240dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="85dp"
+        android:background="#00000000" />
+
+    <View
+        android:id="@+id/rectangle_9"
+        android:layout_width="67dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="189dp"
+        android:layout_marginTop="83dp"
+        android:background="@drawable/rectangle_9" />
+
+    <TextView
+        android:id="@+id/search"
+        android:layout_width="40dp"
+        android:layout_height="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="205dp"
+        android:layout_marginTop="88dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/search"
+        android:textAppearance="@style/search" />
+
+    <View
+        android:id="@+id/rectangle_8"
+        android:layout_width="167dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="83dp"
+        android:background="@drawable/rectangle_8" />
+
+    <TextView
+        android:id="@+id/search_by_p"
+        android:layout_width="131dp"
+        android:layout_height="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="87dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/search_by_p"
+        android:textAppearance="@style/search_by_p" />
+
+    <TextView
+        android:id="@+id/persona"
+        android:layout_width="253dp"
+        android:layout_height="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="142dp"
+        android:gravity="top"
+        android:text="@string/persona"
+        android:textAppearance="@style/persona" />
+
+    <TextView
+        android:id="@+id/persona1"
+        android:layout_width="250dp"
+        android:layout_height="39dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="445dp"
+        android:gravity="top"
+        android:text="@string/persona2"
+        android:textAppearance="@style/persona" />
+
+
+</RelativeLayout>
