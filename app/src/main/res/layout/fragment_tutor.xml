@@ -8,14 +8,16 @@
     android:clipToOutline="true"
     android:background="@drawable/tutorprofil">
 
-    <View
+    <EditText
         android:id="@+id/rectangle_12"
         android:layout_width="336dp"
-        android:layout_height="28dp"
+        android:layout_height="48dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="532dp"
+        android:hint="Enter your names"
+        android:inputType="textPersonName"
         android:background="@drawable/rectangle_6" />
 
     <TextView

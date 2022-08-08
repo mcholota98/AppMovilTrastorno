@@ -35,114 +35,34 @@
         android:text="@string/login"
         android:textAppearance="@style/login" />
 
-    <View
-        android:id="@+id/usuario"
-        android:layout_width="305dp"
-        android:layout_height="34.41dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="364dp"
-        android:background="#00000000" />
 
-    <TextView
+    <EditText
         android:id="@+id/txt_usuario"
-        android:layout_width="64.75dp"
-        android:layout_height="21.43dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="93dp"
-        android:layout_marginTop="370dp"
-        android:gravity="center_horizontal|top"
-        android:text="@string/txt_usuario"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="351dp"
+        android:drawableStart="@drawable/candado8"
+        android:hint="@string/txt_usuario"
+        android:inputType="textPersonName"
+        android:textAlignment="viewStart"
         android:textAppearance="@style/txt_usuario" />
 
-    <View
-        android:id="@+id/line_2"
-        android:layout_width="298dp"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="63dp"
-        android:layout_marginTop="391dp"
-        android:background="@drawable/line_2" />
-
-    <ImageView
-        android:id="@+id/icons8_usua"
-        android:layout_width="38dp"
-        android:layout_height="34dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="361dp"
-        app:srcCompat="@drawable/user" />
-
-    <View
-        android:id="@+id/contrase_a"
-        android:layout_width="302dp"
-        android:layout_height="34.82dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="423dp"
-        android:background="#00000000" />
-
-    <TextView
+    <EditText
         android:id="@+id/txt_contras"
-        android:layout_width="98dp"
-        android:layout_height="22dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="429dp"
-        android:gravity="center_horizontal|top"
-        android:text="@string/txt_contras"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="409dp"
+        android:drawableStart="@drawable/user8"
+        android:hint="@string/txt_contras"
+        android:inputType="textPassword"
+        android:textAlignment="viewStart"
         android:textAppearance="@style/txt_contras" />
-
-    <ImageView
-        android:id="@+id/icons8_cand"
-        android:layout_width="34dp"
-        android:layout_height="32dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="421dp"
-        app:srcCompat="@drawable/candado" />
-
-    <View
-        android:id="@+id/line_3"
-        android:layout_width="298dp"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="454dp"
-        android:background="@drawable/line_3" />
-
-    <View
-        android:id="@+id/ingresar"
-        android:layout_width="146dp"
-        android:layout_height="38dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="489dp"
-        android:background="#00000000" />
-
-    <View
-        android:id="@+id/btningresar"
-        android:layout_width="146dp"
-        android:layout_height="38dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="131dp"
-        android:layout_marginTop="489dp"
-        android:background="@drawable/btningresar" />
 
     <View
         android:id="@+id/login1"
@@ -170,15 +90,18 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="129dp"
-        android:layout_height="42dp"
+        android:layout_width="146dp"
+        android:layout_height="49dp"
         android:layout_alignParentStart="false"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="489dp"
+        android:layout_marginTop="483dp"
+        android:drawableLeft="@drawable/ic_ingresar"
         android:onClick="login"
+        android:textAlignment="center"
         android:text="@string/enter"
+        android:background="@drawable/btningresar"
         android:textAppearance="@style/enter" />
 
 </RelativeLayout>
