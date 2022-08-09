@@ -75,18 +75,23 @@
         android:layout_marginTop="304dp"
         android:background="#00000000" />
 
-    <TextView
+    <Button
         android:id="@+id/crear_cuent"
-        android:layout_width="154dp"
-        android:layout_height="14dp"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="129dp"
+        android:layout_marginLeft="120dp"
         android:layout_marginTop="560dp"
+        android:backgroundTint="@android:color/white"
         android:gravity="center_horizontal|top"
+        android:onClick="NewCreate"
         android:text="@string/crear_cuent"
-        android:textAppearance="@style/crear_cuent" />
+        android:textAlignment="center"
+        android:textAppearance="@style/crear_cuent"
+        android:textColor="@color/azul"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/button"
@@ -97,11 +102,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="483dp"
+        android:background="@drawable/btningresar"
         android:drawableLeft="@drawable/ic_ingresar"
         android:onClick="login"
-        android:textAlignment="center"
         android:text="@string/enter"
-        android:background="@drawable/btningresar"
+        android:textAlignment="center"
         android:textAppearance="@style/enter" />
 
 </RelativeLayout>

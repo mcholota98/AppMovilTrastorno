@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
             JSONObject json_mensaje = new JSONObject();
             json_mensaje.put("usuario", txtUsuario.getText());
             json_mensaje.put("clave", txtClave.getText());
-            ServicioTask servicioTask = new ServicioTask(this, "POST","https://wssecurity.herokuapp.com/api-usuario/login/", json_mensaje.toString(), this);
+            ServicioTask servicioTask = new ServicioTask(this, "POST","https://webservicestrastorno.herokuapp.com/persona/autenticacion/", json_mensaje.toString(), this);
             txtUsuario.setText("");
             txtClave.setText("");
             servicioTask.execute();
@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
             Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
+
+    public void NewCreate(View view) {
+        Intent newActivity = new Intent(MainActivity.this, tutor.class);
+        startActivity(newActivity);
+    }
+
     public static JSONObject getUsuario() {
         return usuario;
     }
@@ -67,12 +73,11 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
             progDailog.dismiss();
             if(json_response.has("usuario")){
                 Intent newActivity = new Intent(MainActivity.this, menu.class);
-                JSONArray json_array = json_response.getJSONArray("usuario");
-                this.setUsuario(json_array.getJSONObject(0));
-                Toast.makeText(this, "Welcome " + getUsuario().get("nombre").toString(), Toast.LENGTH_LONG).show();
+                this.setUsuario(json_response.getJSONObject("usuario"));
+                Toast.makeText(this, "Welcome " + getUsuario().get("nom_usuario").toString(), Toast.LENGTH_LONG).show();
                 startActivity(newActivity);
             }else{
-                Toast.makeText(this, json_response.get("mensaje").toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, json_response.get("usuario").toString(), Toast.LENGTH_LONG).show();
             }
         }catch (Exception ex){
             progDailog.dismiss();
