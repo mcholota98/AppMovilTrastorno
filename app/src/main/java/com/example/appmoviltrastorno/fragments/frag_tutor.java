@@ -1,16 +1,22 @@
 package com.example.appmoviltrastorno.fragments;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.appmoviltrastorno.R;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class frag_tutor extends Fragment {
@@ -27,6 +33,7 @@ public class frag_tutor extends Fragment {
     private ProgressDialog progDailog;
     private Switch swSistema;
     private JSONObject json_data;
+    ImageView imagen;
 
     public frag_tutor() {
         // Required empty public constructor
@@ -59,10 +66,25 @@ public class frag_tutor extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_tutor, container, false);
+        imagen=(ImageView) rootView.findViewById(R.id.imagenUse);
+        Button btnImagen = (Button) rootView.findViewById(R.id.btnCamar);
+        btnImagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                in.setType("image/");
+                startActivityForResult(in.createChooser(in,"Select the Application"),10);
+            }
+        });
+
         return rootView;
     }
+
+
+
 }

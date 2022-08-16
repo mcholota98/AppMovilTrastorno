@@ -15,13 +15,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.appmoviltrastorno.fragments.WebServices.Asynchtask;
 import com.example.appmoviltrastorno.fragments.WebServices.ServicioTask;
+import com.example.appmoviltrastorno.modelo.ImagenBitmap;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Calendar;
 
-public class tutor extends AppCompatActivity {
+public class tutor extends AppCompatActivity implements Asynchtask {
 
     private ProgressDialog progDailog;
     private TextView txtnombre;
@@ -31,6 +34,7 @@ public class tutor extends AppCompatActivity {
     private TextView txtuser;
     private TextView txtcontrasena;
     private TextView txtconfirmar;
+    private ImagenBitmap decoder;
     ImageView imagen;
     EditText etDate;
 
@@ -42,7 +46,7 @@ public class tutor extends AppCompatActivity {
         this.txtapellido = (TextView) findViewById(R.id.apellidos);
         this.txtcedula = (TextView) findViewById(R.id.cedula);
         this.txtuser = (TextView) findViewById(R.id.usuario);
-        this.txtcontrasena = (TextView) findViewById(R.id.txt_contras);
+        this.txtcontrasena = (TextView) findViewById(R.id.contrasena);
         this.txtconfirmar = (TextView) findViewById(R.id.confirmarcontra);
 
         imagen=(ImageView) findViewById(R.id.imagenUser);
@@ -60,7 +64,7 @@ public class tutor extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month=month+1;
-                        String date=day+"/"+month+"/"+year;
+                        String date="1998-02-27";
                         etDate.setText(date);
                     }
                 },year,month,day);
@@ -86,31 +90,60 @@ public class tutor extends AppCompatActivity {
 
     public void registrar(View view) {
         try {
-            JSONObject json_mensaje = new JSONObject();
-            json_mensaje.put("nom_usuario", txtnombre.getText());
-            json_mensaje.put("clave", txtcontrasena.getText());
-            json_mensaje.put("persona__nombres", txtcontrasena.getText());
-            json_mensaje.put("persona__apellidos", txtapellido.getText());
-            json_mensaje.put("persona__cedula", txtcedula.getText());
-            json_mensaje.put("persona__fecha_nacimiento", etDate.getText());
-            json_mensaje.put("persona__foto_perfil", txtcedula.getText());
-            //ServicioTask servicioTask = new ServicioTask(this, "POST","https://webservicestrastorno.herokuapp.com/persona/cuidador/", json_mensaje.toString(), this);
-            txtnombre.setText("");
-            txtcontrasena.setText("");
-            txtcontrasena.setText("");
-            txtapellido.setText("");
-            txtcedula.setText("");
-            etDate.setText("");
-            txtconfirmar.setText("");
-            //servicioTask.execute();
-            progDailog = new ProgressDialog(this);
-            progDailog.setTitle("Verificando usuario");
-            progDailog.setMessage("por favor, espere...");
-            progDailog.setIndeterminate(false);
-            progDailog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            progDailog.setCancelable(true);
-            progDailog.show();
+            if(txtcontrasena.getText().toString().equals(txtconfirmar.getText().toString())) {
+                JSONObject json_mensaje = new JSONObject();
+                json_mensaje.put("nom_usuario", txtuser.getText());
+                json_mensaje.put("clave", txtcontrasena.getText());
+                json_mensaje.put("persona__nombres", txtnombre.getText());
+                json_mensaje.put("persona__apellidos", txtapellido.getText());
+                json_mensaje.put("persona__cedula", txtcedula.getText());
+                json_mensaje.put("persona__fecha_nacimiento", etDate.getText());
+                decoder = new ImagenBitmap(this.imagen);
+                String ba64 = decoder.getBase64();
+                json_mensaje.put("persona__foto_perfil", "data:image/png;base64," + decoder.getBase64());
+                ServicioTask servicioTask = new ServicioTask(this, "POST","https://webservicestrastorno.herokuapp.com/persona/cuidador/", json_mensaje.toString(), this);
+                txtnombre.setText("");
+                txtcontrasena.setText("");
+                txtcontrasena.setText("");
+                txtapellido.setText("");
+                txtcedula.setText("");
+                etDate.setText("");
+                txtconfirmar.setText("");
+                txtuser.setText("");
+                servicioTask.execute();
+                progDailog = new ProgressDialog(this);
+                progDailog.setTitle("Registering user");
+                progDailog.setMessage("Please wait...");
+                progDailog.setIndeterminate(false);
+                progDailog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progDailog.setCancelable(true);
+                progDailog.show();
+            }
+            else
+            {
+                Toast.makeText(this, "Passwords do not match", Toast.LENGTH_LONG).show();
+            }
         } catch (Exception ex) {
+            Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void processFinish(String result) throws JSONException {
+        try {
+            JSONObject json_response = new JSONObject(result);
+            progDailog.dismiss();
+            String resul=json_response.getString("cuidador");
+            System.out.println(resul);
+            if(resul.equals("guardado")){
+                Intent newActivity = new Intent(tutor.this, MainActivity.class);
+                Toast.makeText(this, "Registered caregiver user", Toast.LENGTH_LONG).show();
+                startActivity(newActivity);
+            }else{
+                Toast.makeText(this, json_response.get("usuario").toString(), Toast.LENGTH_LONG).show();
+            }
+        }catch (Exception ex){
+            progDailog.dismiss();
             Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
